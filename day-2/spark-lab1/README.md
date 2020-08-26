@@ -1,10 +1,10 @@
-# Spark Lab 1 - cluster/local mode
+# Spark Lab 1 - YARN cluster/YARN client/local mode
 
 1. sparkpi display the content of sparkpi
     ```
     cat /usr/lib/spark/examples/src/main/python/pi.py
     ```
-2. Run on a YARN cluster client mode
+2. Run on YARN cluster in client mode
     ```
     /usr/bin/spark-submit \
     --class org.apache.spark.examples.SparkPi \
@@ -15,7 +15,7 @@
 
     ```
 
-3. Run on a YARN cluster Cluster mode
+3. Run on YARN cluster in cluster mode
     ```
     /usr/bin/spark-submit \
     --class org.apache.spark.examples.SparkPi \
@@ -26,7 +26,7 @@
 
     ```
 
-4. Python word count running locally on 4 cores
+4. Python word count running locally on 5 cores
     ```
     cd /usr/lib/spark/
     /usr/bin/spark-submit --master local[4] /usr/lib/spark/examples/src/main/python/wordcount.py 'file:///usr/lib/spark/examples/src/main/resources/people.txt'
