@@ -1,4 +1,4 @@
-# Spark Lab 2 - Partions 
+# Spark Lab 2 - Partitions 
 
 1. Launch an EMR cluster with hive and spark applications ( skip this step if emr is already running )
 
