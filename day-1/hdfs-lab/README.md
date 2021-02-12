@@ -2,14 +2,14 @@
 
 ## Part 1: In the EC2 Dashboard Select the Master Instance
 
-  ![fig11](./resources/Connect.PNG)
+  ![fig11](./resources/Connect.png)
 
-  ![fig11](./resources/SSM.PNG)
+  ![fig11](./resources/SSM.png)
 
 
 If your login is successful, you will see a welcome screen, which looks like below.
 
-![fig12](./resources/Login.PNG)
+![fig12](./resources/Login.png)
 
 
 
