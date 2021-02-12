@@ -58,7 +58,7 @@
 
 11. Executor OOM
       ```
-      cross_joinedDF = camera_df.crossJoin(pc_df)
+      cross_joinedDF = camera_df.crossJoin(camera_df)
       cross_joinedDF.explain()
       cross_joinedDF.count()
       ```
