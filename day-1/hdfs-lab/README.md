@@ -66,13 +66,9 @@ If your login is successful, you will see a welcome screen, which looks like bel
 
   ![fig16](./resources/fig16.PNG)    
 
-2. Logon to a core node and check the data node logs as well. To logon to core node, go to the hardware tab on EMR console and click the instance group id in order to see the core node DNS. Then login to the core node and check the data node logs in location `/var/log/hadoop-hdfs/`.
+2. Logon to a core node and check the data node logs as well. To logon to core node, go to the EC2 dashboard and select the data node instances. Then login to the core node and check the data node logs in location `/var/log/hadoop-hdfs/`.
 
-  ![fig18](./resources/fig18.PNG)
-
-  ![fig19](./resources/fig19.PNG)
-
-  ![fig20](./resources/fig20.PNG)
+  ![fig18](./resources/CoreNodes.png)
 
   ![fig21](./resources/fig21.PNG)
 
