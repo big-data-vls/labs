@@ -13,8 +13,7 @@ Compare the Hive runtimes of MapReduce vs. Tez
 2. Create a cluster as shown in the procedure called To create a cluster with Tez installed using the console. Choose Hive as an application in addition to Tez.
 ![emr-cluster](resources/emr-cluster.png)
 
-3. Connect to the cluster master node using SSH. For more information, see Connect to the Master Node Using SSH.
-![login](resources/login.png)
+3. Connect to the cluster master node 
 
 4. Run the `Hive_CloudFront.q` script using MapReduce with the following command, where region is the region in which your cluster is located:
   > <pre>hive -f s3://eu-central-1.elasticmapreduce.samples/cloudfront/code/Hive_CloudFront.q \<br />-d INPUT=s3://eu-central-1.elasticmapreduce.samples \<br />-d OUTPUT=s3://<code style="color:red;"/>umesh-hive</code>/mr-test/ <i>-hiveconf hive.execution.engine=mr</i></pre>
