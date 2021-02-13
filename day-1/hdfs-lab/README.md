@@ -1,9 +1,17 @@
 # Running HDFS commands
 
-## Part 1: SSH  to EMR cluster master node
+## Part 1: In the EC2 Dashboard Select the Master Instance
+
+  ![fig11](./resources/Connect.png)
+
+  ![fig11](./resources/SSM.png)
+
+
 If your login is successful, you will see a welcome screen, which looks like below.
 
-NB: You may need to allow SSH access from your IP address in security group of the master node in case you get “Connection timed out” error. Also, check that you did not create the cluster in a private subnet. For instructions how to connect to the master node from windows and mac/linux, please click on “Connect to the Master Node Using SSH” in the summary tab on EMR console.
+![fig12](./resources/Login.png)
+
+
 
 ## Part 2: Demonstration of HDFS blocks, replication and sample commands.
 
@@ -45,26 +53,22 @@ NB: You may need to allow SSH access from your IP address in security group of t
 
 5. Set the replication of that file to 3 then check the locations of the blocks again.
   ```
-  hdfs dfs -setrep 3 /user/hadoop/part-00000-495c48e6-96d6-4650-aa65-3c36a3516ddd.c000.snappy.parquet
+  hdfs dfs -setrep 2 /user/hadoop/part-00000-495c48e6-96d6-4650-aa65-3c36a3516ddd.c000.snappy.parquet
   ```
 
 ## Part 3: HDFS administration
 
 1. Check the Namenode logs to understand which data node has the block. To do this, please open the following file with a commandline editor (vi, vim, nano) and check
   ```
-  vi /var/log/hadoop-hdfs/hadoop-hdfs-namenode-ip-172-13-0-84.log
+  vi /var/log/hadoop-hdfs/hadoop-hdfs-namenode-ip-*.log
   ```
   ![fig17](./resources/fig17.PNG)
 
   ![fig16](./resources/fig16.PNG)    
 
-2. Logon to a core node and check the data node logs as well. To logon to core node, go to the hardware tab on EMR console and click the instance group id in order to see the core node DNS. Then login to the core node and check the data node logs in location `/var/log/hadoop-hdfs/`.
+2. Logon to a core node and check the data node logs as well. To logon to core node, go to the EC2 dashboard and select the data node instances. Then login to the core node and check the data node logs in location `/var/log/hadoop-hdfs/`.
 
-  ![fig18](./resources/fig18.PNG)
-
-  ![fig19](./resources/fig19.PNG)
-
-  ![fig20](./resources/fig20.PNG)
+  ![fig18](./resources/CoreNodes.png)
 
   ![fig21](./resources/fig21.PNG)
 
@@ -76,7 +80,7 @@ NB: You may need to allow SSH access from your IP address in security group of t
 
 4. Copy another parquet file from the s3 location `s3://amazon-reviews-pds/parquet/product_category=Books/` to the master node home directory
   ```
-  aws s3 cp s3://amazon-reviews-pds/parquet/product_category=Books/part-00000-495c48e6-96d6-4650-aa65-3c36a3516ddd.c000.snappy.parquet .
+  aws s3 cp s3://amazon-reviews-pds/parquet/product_category=Books/part-00002-495c48e6-96d6-4650-aa65-3c36a3516ddd.c000.snappy.parquet .
   ```
 
 5. Check whether the name node is in safe mode
@@ -109,7 +113,7 @@ NB: You may need to allow SSH access from your IP address in security group of t
 
 9. Run the following command to see summary information about HDFS.
   ```
-  sudo -u hdfs hdfs dfsadmin –report
+  sudo -u hdfs hdfs dfsadmin -report
   ```
   ![fig25](./resources/fig25.PNG)
 

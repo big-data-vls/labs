@@ -33,7 +33,7 @@
 
     > You can view output of how the command should like here: [output.txt](resources/3_cluster_mode.txt)
 
-4. Python word count running locally on 5 cores
+4. Python word count running locally on 4 cores
     ```
     cd /usr/lib/spark/
     /usr/bin/spark-submit --master local[4] /usr/lib/spark/examples/src/main/python/wordcount.py 'file:///usr/lib/spark/examples/src/main/resources/people.txt'
