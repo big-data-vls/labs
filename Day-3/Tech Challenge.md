@@ -3,7 +3,7 @@
 
 ## Pre-requisites:
 
-Launch a EMR cluster 5.30.1 with Hadoop, Spark, Hive, Tez and Ganglia  in eu-central-1 region.
+Launch a EMR cluster 5.30.1 with Hadoop, Spark, Hive, Tez and Ganglia  in eu-west-1 region.
 
 ## Challenge-1
 
